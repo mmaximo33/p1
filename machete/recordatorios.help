@@ -1,0 +1,3 @@
+Dynatable
+IMPORTANTE: Los nombre de los campos de la tabla deben comenzar por mayuscula sino no tira como que no
+encuentra el valor "undefined"

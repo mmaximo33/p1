@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<table class='table table-bordered' border='1'>
+	<tr>
+		<td>id</td>
+		<td>Apellido</td>
+		<td>Nombre1</td>
+		<td>Nombre2</td>
+		<td>Email</td>
+	</tr>
+	{% for iData in data %}
+	<tr>
+		<td>{{iData.idUsuario}}</td>
+		<td>{{iData.Apellido}}</td>
+		<td>{{iData.Nombre1}}</td>
+		<td>{{iData.Nombre2}}</td>
+		<td>{{iData.Email}}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock content %}

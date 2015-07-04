@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+<!-- Cargo la lista completa de usuarios -->
+{% include 'usuarios/usuarios_lista.html' %}
+
+
+{% include 'js_dynatable.html' %}
+{% endblock content %}
