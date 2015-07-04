@@ -21,7 +21,7 @@ $app->get('/get-usuarios', function() use ($app)
  * TESTEP
  * 
  */
-$app->get('/usuarios_test', function() use ($app) 
+$app->get('/usuarios', function() use ($app) 
 {
 	//Guardo los datos obtenidos de la consulta
 	$response['data']= $app['db']->getAll("SELECT * FROM t_usuarios");
