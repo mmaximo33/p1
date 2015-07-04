@@ -27,5 +27,5 @@ $app->get('/usuarios_test', function() use ($app)
 	$response['data']= $app['db']->getAll("SELECT * FROM t_usuarios");
 
    	//Abro la lista de usuariso y le paso los datos
-   	return $app['twig']->render('/usuarios/usuarios_test.html',$response);   	
+   	return $app['twig']->render('/usuarios2/usuarios.html',$response);   	
 });

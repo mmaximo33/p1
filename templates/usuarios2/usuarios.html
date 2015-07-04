@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!-- Indicates a successful or positive action -->
+<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#usuarios_crear">+ Agregar</button>
+<br />
+<br />
+<table class='table table-condensed table-bordered table-hover '>
+	<tr>
+		<th>id</th>
+		<th>Apellido</th>
+		<th>Nombre</th>
+		<th>Email</th>
+		<th>Acciones</th>
+	</tr>
+	{% for iData in data %}
+		<tr>
+			<td>{{iData.idUsuario}}</td>
+			<td>{{iData.apellido}}</td>
+			<td>{{iData.nombre}}</td>
+			<td>{{iData.email}}</td>
+			<td>
+				<button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#usuarios_editar">Editar</button>
+				<button type="button" class="btn btn-sm btn-danger" >Borrar</button>
+			</td>
+		</tr>
+	{% endfor %}
+</table>
+
+{% include 'usuarios2/usuarios_modal.html' %}
+
+{% endblock content %}

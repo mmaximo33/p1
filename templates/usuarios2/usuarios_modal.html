@@ -1,0 +1,37 @@
+<!-- Modal crear usuario -->
+<div class="modal fade" id="usuarios_crear" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Crear usuario</h4>
+      </div>
+      <div class="modal-body">
+        {% include 'usuarios2/usuarios_crear.html' %}
+      </div>
+      <div class="modal-footer">
+        <button id="save" type="button" class="btn btn-primary">Crear</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal editar usuario -->
+<div class="modal fade" id="usuarios_editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Editar usuario</h4>
+      </div>
+      <div class="modal-body">
+        {% include 'usuarios2/usuarios_editar.html' %}
+      </div>
+      <div class="modal-footer">
+        <button id="save" type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
