@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2015 a las 03:40:04
+-- Tiempo de generación: 04-07-2015 a las 20:53:18
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.6.8
 
@@ -30,7 +30,14 @@ CREATE TABLE IF NOT EXISTS `t_perfiles` (
   `idPerfil` int(11) NOT NULL,
   `Nombre` text NOT NULL,
   `Descripcion` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `t_perfiles`
+--
+
+INSERT INTO `t_perfiles` (`idPerfil`, `Nombre`, `Descripcion`) VALUES
+(1, 'Administrador', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -40,11 +47,18 @@ CREATE TABLE IF NOT EXISTS `t_perfiles` (
 
 CREATE TABLE IF NOT EXISTS `t_usuarios` (
   `idUsuario` int(11) NOT NULL,
-  `Apellido` text NOT NULL,
-  `Nombre1` text NOT NULL,
-  `Nombre2` text NOT NULL,
-  `Email` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `apellido` text NOT NULL,
+  `nombre` text NOT NULL,
+  `email` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `t_usuarios`
+--
+
+INSERT INTO `t_usuarios` (`idUsuario`, `apellido`, `nombre`, `email`) VALUES
+(7, 'Marucci', 'Maximo', 'Marucci.maximo@tel3.com.ar'),
+(8, 'Apellido2', 'Nombre2', 'corre2@email.com');
 
 -- --------------------------------------------------------
 
@@ -57,7 +71,14 @@ CREATE TABLE IF NOT EXISTS `t_usuarios_rel_perfiles` (
   `idUsuarios` int(11) NOT NULL,
   `idPerfiles` int(11) NOT NULL,
   `FechaHora` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `t_usuarios_rel_perfiles`
+--
+
+INSERT INTO `t_usuarios_rel_perfiles` (`idRel`, `idUsuarios`, `idPerfiles`, `FechaHora`) VALUES
+(1, 7, 1, '2015-07-04');
 
 --
 -- Índices para tablas volcadas
@@ -89,17 +110,17 @@ ALTER TABLE `t_usuarios_rel_perfiles`
 -- AUTO_INCREMENT de la tabla `t_perfiles`
 --
 ALTER TABLE `t_perfiles`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `t_usuarios`
 --
 ALTER TABLE `t_usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `t_usuarios_rel_perfiles`
 --
 ALTER TABLE `t_usuarios_rel_perfiles`
-  MODIFY `idRel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRel` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
@@ -108,7 +129,8 @@ ALTER TABLE `t_usuarios_rel_perfiles`
 -- Filtros para la tabla `t_usuarios_rel_perfiles`
 --
 ALTER TABLE `t_usuarios_rel_perfiles`
-ADD CONSTRAINT `t_usuarios_rel_perfiles_ibfk_1` FOREIGN KEY (`idPerfiles`) REFERENCES `t_perfiles` (`idPerfil`);
+ADD CONSTRAINT `t_usuarios_rel_perfiles_ibfk_1` FOREIGN KEY (`idUsuarios`) REFERENCES `t_usuarios` (`idUsuario`),
+ADD CONSTRAINT `t_usuarios_rel_perfiles_ibfk_2` FOREIGN KEY (`idPerfiles`) REFERENCES `t_perfiles` (`idPerfil`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
