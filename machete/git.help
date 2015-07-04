@@ -1,0 +1,58 @@
+#########################################################################
+COMANDOS GIT 
+Interes para git 
+
+LibrosWeb : http://git-scm.com/book/es/v1
+GitHub Glosario: https://help.github.com/articles/github-glossary/
+
+Video tutorial (Teoria y practica): https://www.youtube.com/watch?v=fxolktqi3Rs&list=PL353A30C7CCE5098F
+
+ESTADOS : https://git-scm.com/figures/18333fig0201-tn.png
+#########################################################################
+
+RL: Repositorio local
+RN: Repositorio nube
+
+Configuracion
+git config --global user.name "Nombre" 						# Guarda el nombre en la configuracion global
+git config --global user.email "correo@electronico.com"		# Guarda el correo en la configuracion global	
+
+Comandos GIT
+git init 													# Crear RL
+git add NombreDictorio      								# Agregar al RL los directorios o archivos indicados
+git commit -m "Primer comentario"							# Comitea los archivos los archivos agregados al RL
+git status 													# Indica aquellos archivos untracked 
+git remote add origin https://github.com/USUARIO/RL.git 	# Vincula el RL con RN
+git push -u origin master 									# Sube al RN el RL
+git clone origin http://github.com/USUARIO/RL.git 			# Clona el RN en el RL
+
+
+
+…Crear un repositorio y vincularlo con github
+echo # p1 >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/mmaximo33/p1.git
+git push -u origin master
+
+
+...Subir un repositiorio.
+git remote add origin https://github.com/mmaximo33/p1.git
+git push -u origin master
+
+
+..Clonar repositorios
+git clone origin https://github.com/mmaximo33/p1.git
+
+
+..Crear archivos rapidos 
+touch index.php
+
+
+
+
+
+
+
+

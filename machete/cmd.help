@@ -1,0 +1,14 @@
+
+#########################################################################
+COMANDOS CMD 
+#########################################################################
+
+
+
+Comando #	Descrippcion								# Uso
+#########################################################################
+cd 		# 	Navegar por los directorios					# cd c:/vhost/p1 
+cd 		# 	Volver al directorio anterior				# cd ..
+ls  	# 	Lista de archivos sobre este directorio 	# ls
+mkdir 	# 	Crear una carpeta nueva						# mkdir NombreCarpeta 						
+cp 		# 	Copiar archivos de un lugar al otro 		# cp c:/vhost/p1/index.php c:/vhost/p2 		

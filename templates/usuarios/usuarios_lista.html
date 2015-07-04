@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<table class='table table-bordered'>
+	<tr>
+		<td>id</td>
+		<td>name</td>
+	</tr>
+	{% for datosUsuario in ListaUsuarios %}
+	<tr>
+		<td>{{datosUsuario.idUsuario}}</td>
+		<td>{{datosUsuario.Apellido}}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock content %}
