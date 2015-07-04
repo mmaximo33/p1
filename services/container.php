@@ -18,7 +18,7 @@ $container['db'] = $container->share(function($container) {
         'mysql',
         'localhost',
         '3306',
-        'pruebas'
+        'prueba'
     );
 
     $user = 'root';
