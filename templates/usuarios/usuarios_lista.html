@@ -7,10 +7,10 @@
 		<td>id</td>
 		<td>name</td>
 	</tr>
-	{% for datosUsuario in ListaUsuarios %}
+	{% for iData in data %}
 	<tr>
-		<td>{{datosUsuario.idUsuario}}</td>
-		<td>{{datosUsuario.Apellido}}</td>
+		<td>{{iData.idUsuario}}</td>
+		<td>{{iData.Apellido}}</td>
 	</tr>
 	{% endfor %}
 </table>

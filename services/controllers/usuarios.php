@@ -6,11 +6,10 @@
  */
 $app->get('/usuarios', function() use ($app) 
 {
-	$dataUsuarios= $app['db']->getAll("SELECT * FROM t_usuarios");
+	//Guardo los datos obtenidos de la consulta
+	$response['data']= $app['db']->getAll("SELECT * FROM t_usuarios");
 
-   	// seteando parametros para la vista
-   	// renderisamos
-   	//return  'dusuarios';
-   	return $app['twig']->render('/usuarios/usuarios_lista.html');   	
+   	//Abro la lista de usuariso y le paso los datos
+   	return $app['twig']->render('/usuarios/usuarios_lista.html',$response);   	
 });
 
