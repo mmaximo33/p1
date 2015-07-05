@@ -1,18 +1,22 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-	<header data-step="1" data-intro="Titulo de la entidad">
+	<header class="col-md-12" data-step="1" data-intro="Titulo de la entidad">
+		[header]
 		<h1 class="text-overflow text-primary">
-			<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-			Panel de usuarios
+			<div class="col-md-11">				
+				Panel de usuarios
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+			</div>
+			<div class="col-md-1">
 			<a href="javascript:void(0);" onclick="javascript:introJs().start();">
 				<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
 			</a>
-	</h1>
-
+			</div>
+		</h1>
 	</header>
-	<article>
-
+	<article class="col-md-12">
+		[article]<br/>
 		<!-- Boton para agregar usuarios -->
 		<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#usuarios_crear" data-step="2" data-intro="Agregar usuarios">
 			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>

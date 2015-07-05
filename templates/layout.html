@@ -7,21 +7,23 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 </head>
-<body>
-    <div class="col-md-12">
-    <header class="col-md-12" style="background-color: #F3F781">{% include 'header.html' %}</header>
+<body class="col-md-12" style="background-color: #F6CED8">
+    [Body]
+    
+    <header class="col-md-12" style="background-color: #BDBDBD">{% include 'header.html' %}</header>
     <nav class="col-md-12" style="background-color: #A9F5A9">{% include 'nav_top.html' %}</nav>
-    <nav class="col-md-2" style="background-color: #A9A9F5">{% include 'nav_left.html' %}</nav>
-
-    <section class="col-md-10" style="background-color: #F2F2F2">
-        <h3>[Body]</h3>
+    
+    <nav class="col-md-1" style="background-color: #A9A9F5">{% include 'nav_left.html' %}</nav>
+    <section class="col-md-11" style="background-color: #F2F2F2">
+    [Section]
+        
         {% block content %}
 
         {% endblock content %}
     </section>
 
-    <footer class="col-md-12" style="background-color: #F3F781">{% include 'footer.html' %}</footer>
-    </div>
+    <footer class="col-md-12" style="background-color: #BDBDBD">{% include 'footer.html' %}</footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="http://p1.mm/assets/js/libs/jquery.dynatable.js"></script>
