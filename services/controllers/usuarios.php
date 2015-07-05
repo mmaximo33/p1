@@ -29,3 +29,26 @@ $app->get('/usuarios', function() use ($app)
    	//Abro la lista de usuariso y le paso los datos
    	return $app['twig']->render('/usuarios2/usuarios.html',$response);   	
 });
+
+/**
+ * Post
+ * 
+ */
+$app->post('/usuarios', function(Request $request) use ($app) 
+{
+	$user = $app['db']->dispense('usuarios');
+
+	$user->nombre = $request->get('nombre');
+	$user->email = $request->get('email');
+	//$user->id_perfil = $request->get('id_perfil');
+	var_dump($user); die;
+ 	try {
+ 		$response['success'] = true;
+ 		$response['message'] = $app['db']->store($user);
+ 	} catch (Exception $e) {
+ 		$response['success'] = false;
+ 		$response['message'] = $e->getMessage();
+ 	}
+
+ 	return $app->json($response);
+});
