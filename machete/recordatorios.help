@@ -2,10 +2,12 @@ Dynatable
 IMPORTANTE: Los nombre de los campos de la tabla deben comenzar por mayuscula sino no tira como que no
 encuentra el valor "undefined"
 
+Incluir al proyecto:
+	HELP: http://www.htmldrive.net/items/demo/1561/New-feature-introduction-with-your-web
 
 Interesantes 
 http://www.htmldrive.net/
-http://demos.telerik.com -> Es pago pero para copiar los nombres de las cosas
+http://tympanus.net/codrops/
 
 TABLAS 
 http://www.htmldrive.net/items/show/836/Useful-jQuery-tableHover
@@ -13,11 +15,10 @@ http://www.htmldrive.net/items/show/836/Useful-jQuery-tableHover
 Etiquetas
 http://www.htmldrive.net/items/demo/1396/Tag-Handler-used-for-managing-tag-with-jQuery-plugin
 
-
 Calendarios 
 Excelente!
 http://www.htmldrive.net/items/show/1204/-CSS3-and-jQuery-date-calendar-effect
 
 
-Muy util para ayuda
-http://www.htmldrive.net/items/demo/1561/New-feature-introduction-with-your-web
+menu
+http://tympanus.net/Development/MultiLevelPushMenu/index3.html#

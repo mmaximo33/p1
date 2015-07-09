@@ -1,11 +1,18 @@
 {% extends 'layout.html' %}
-
-
 {% block content %}
 
-<!-- Cargo la lista completa de usuarios -->
-{% include 'usuarios/usuarios_lista.html' %}
+	<header class="col-md-12" data-step="1" data-intro="Titulo de la entidad">
+		[header]
+		<h1 class="text-overflow text-primary">			
+			<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+			<small class="text-overflow text-primary">Panel de usuarios
+			<a href="javascript:void(0);" onclick="javascript:introJs().start();">
+				<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+			</a>
+			</small>		
 
-
-
+		</h1>		
+	</header>
+	{% include 'usuarios/usuarios_lista.html' %}
+	{% include 'usuarios/usuarios_modal.html' %}
 {% endblock content %}
