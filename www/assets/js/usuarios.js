@@ -93,7 +93,7 @@ function actionDelete(e) {
       }
     });
   } 
-}
+} 
 /*
 
 $(document).ready(function() {
