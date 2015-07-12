@@ -47,18 +47,24 @@ function actionSave(e,action){
 //AMB
 function actionNew(e) {
   console.log('Action NEW')
-  var $form = $(this);
-  var $apellido = $form.find('#inputApellido');
-  var $nombre = $form.find('#inputNombre');
-  var $email = $form.find('#inputEmail');
-  
+  /*var $form = $(this);
+  var $apellido = $form.find('#inputApellido').val();
+  var $nombre = $form.find('#inputNombre').val();
+  var $email = $form.find('#inputEmail').val();*/
+  var $apellido = 'Apellido';
+  var $nombre = 'Nombre';
+  var $email = 'Correo';
+
+  console.log($apellido + $email + $nombre);
   $.ajax({
-    url: '/usuario/add/',
+    url: 'http://local_p1/usuario/add',
     method:'post',
+    dataType: 'json',
+    contentType: 'application / json; charset = utf-8',
     data: {
-      apellido: $apellido.val(),
-      nombre: $nombre.val(),
-      email: $email.val()
+    apellido: $apellido,
+    nombre: $nombre,
+//    email: $email
     },
     success: function(response){
       console.log(response);
@@ -66,6 +72,9 @@ function actionNew(e) {
       $('#userForm_ABM').modal('hide') ;
       //Recargo la pagina
       location.reload();
+    },
+    error: function(response) {
+      console.log(response.status + " " + response.statusText);
     }
   });
 
@@ -86,6 +95,7 @@ function actionDelete(e) {
     console.log('Llamo el controlador')
     $.ajax({
       url: '/usuario/delete/'+id,
+      dataType: "json",
       method:'delete',
       success: function(response){
         console.log(response);

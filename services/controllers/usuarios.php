@@ -10,9 +10,6 @@ $app->get('/usuarios_todos', function() use ($app)
    	return $app['twig']->render('/usuarios/usuarios.html');   	
 });
 
-
-
-
 $app->get('/get-usuarios', function() use ($app) 
 {
    	$data = $app['db']->getAll("SELECT * FROM t_usuarios");
@@ -31,7 +28,7 @@ $app->get('/usuarios', function() use ($app)
 });
 
 //POST
-$app->post('/usuario/add/', function(Request $request) use ($app) 
+$app->post('/usuario/add', function(Request $request) use ($app) 
 {
 	$user = $app['db']->dispense('usuarios');
 
