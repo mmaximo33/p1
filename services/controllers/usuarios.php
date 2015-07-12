@@ -30,7 +30,7 @@ $app->get('/usuarios', function() use ($app)
 //POST
 $app->post('/usuario/add', function(Request $request) use ($app) 
 {
-	$user = $app['db']->dispense('usuarios');
+	$user = $app['db']->dispense('t_usuarios');
 
 	$user->apellido = $request->get('apellido');
    $user->nombre = $request->get('nombre');
@@ -47,6 +47,13 @@ $app->post('/usuario/add', function(Request $request) use ($app)
  	}
  	return $app->json($response);
 });
+
+
+
+
+
+
+
 
 //DELETE
 $app->delete('/usuario/delete/{id}', function($id) use ($app)
