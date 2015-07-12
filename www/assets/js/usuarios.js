@@ -64,7 +64,7 @@ function actionNew(e) {
     data: {
     apellido: $apellido,
     nombre: $nombre,
-//    email: $email
+    email: $email
     },
     success: function(response){
       console.log(response);
