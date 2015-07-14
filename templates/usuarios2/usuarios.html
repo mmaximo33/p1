@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+	<ol class="breadcrumb">
+  		<li><a href="#">Inicio</a></li>
+  		<li><a href="#">admin</a></li>
+ 		<li class="active">Usuarios</li>
+	</ol>
+	<header class="col-md-12" data-step="1" data-intro="Titulo de la entidad">
+		[header]
+		<h1 class="text-overflow text-primary">			
+			<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+			<small class="text-overflow text-primary">Panel de usuarios
+			<a href="javascript:void(0);" onclick="javascript:introJs().start();">
+				<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+			</a>
+			</small>		
+
+		</h1>		
+	</header>
+	{% include 'usuarios2/usuarios_lista.html' %}
+	{% include 'usuarios2/usuarios_modal.html' %}
+{% endblock content %}

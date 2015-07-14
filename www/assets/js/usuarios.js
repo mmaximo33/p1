@@ -40,41 +40,48 @@ function actionSave(e,action){
   }else if(action='Edit'){
     actionEdit(e);
   }
-
 }
 
+function actionSave(e,action){
+  console.log('Action SAVE');
+  //Detengo cualquier accion boostrap.js
+  e.preventDefault();
+  //Controlo que camino debo tomar.
+  if(action='New'){
+    actionNew(e);
+  }else if(action='Edit'){
+    actionEdit(e);
+  }
+}
 
 //AMB
 function actionNew(e) {
   console.log('Action NEW')
-  /*var $form = $(this);
+  var $form = $('form#userForm_ABM');
   var $apellido = $form.find('#inputApellido').val();
   var $nombre = $form.find('#inputNombre').val();
-  var $email = $form.find('#inputEmail').val();*/
-  var $apellido = 'Apellido';
-  var $nombre = 'Nombre';
-  var $email = 'Correo';
-
+  var $email = $form.find('#inputEmail').val();
   console.log($apellido + $email + $nombre);
   $.ajax({
-    url: 'http://local_p1/usuario/add',
+    url: '/usuario/add',
     method:'post',
-    dataType: 'json',
-    contentType: 'application / json; charset = utf-8',
     data: {
-    apellido: $apellido,
-    nombre: $nombre,
-    email: $email
+      apellido: $apellido,
+      nombre: $nombre,
+      email: $email
     },
     success: function(response){
       console.log(response);
       //Oculto el formulario
       $('#userForm_ABM').modal('hide') ;
       //Recargo la pagina
-      location.reload();
+       location.reload();
     },
     error: function(response) {
       console.log(response.status + " " + response.statusText);
+    },
+    complete: function(response) {
+      console.error(response);
     }
   });
 

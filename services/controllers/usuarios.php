@@ -1,27 +1,16 @@
 <?php
 
-/**
- * Lista completa de los usuarios cargados.
- * 
- */
-$app->get('/usuarios_todos', function() use ($app) 
-{
-   	//Abro la lista de usuariso y le paso los datos
-   	return $app['twig']->render('/usuarios/usuarios.html');   	
-});
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-$app->get('/get-usuarios', function() use ($app) 
-{
-   	$data = $app['db']->getAll("SELECT * FROM t_usuarios");
- 	return  $app->json($data);
-});
+
 
 
 //LIST
 $app->get('/usuarios', function() use ($app) 
 {
 	//Guardo los datos obtenidos de la consulta
-	$response['data']= $app['db']->getAll("SELECT * FROM t_usuarios");
+	$response['data']= $app['db']->getAll("SELECT * FROM tusuarios");
    //Abro la lista de usuariso y le paso los datos
    	return $app['twig']->render('/usuarios/usuarios.html',$response);   
    	//return $app->json($response);	
@@ -30,13 +19,13 @@ $app->get('/usuarios', function() use ($app)
 //POST
 $app->post('/usuario/add', function(Request $request) use ($app) 
 {
-	$user = $app['db']->dispense('t_usuarios');
+   $user = $app['db']->dispense("tusuarios");
 
 	$user->apellido = $request->get('apellido');
    $user->nombre = $request->get('nombre');
    $user->email = $request->get('email');
 
-   $user_id = $app['db']->store($user);
+   //$user_id = $app['db']->store($user);
 
    try {
       $response['success'] = true;
@@ -48,17 +37,10 @@ $app->post('/usuario/add', function(Request $request) use ($app)
  	return $app->json($response);
 });
 
-
-
-
-
-
-
-
 //DELETE
 $app->delete('/usuario/delete/{id}', function($id) use ($app)
 {
-   $usuario = $app['db']->load('t_usuarios', $id);
+   $usuario = $app['db']->load('tusuarios', $id);
    try {
       $response['success'] = true;
       $response['message'] = $app['db']->trash($usuario);
@@ -68,5 +50,4 @@ $app->delete('/usuario/delete/{id}', function($id) use ($app)
    }
    return $app->json($response);
 });
-
 

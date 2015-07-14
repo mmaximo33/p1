@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2015 a las 20:53:18
+-- Tiempo de generación: 14-07-2015 a las 04:51:18
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.6.8
 
@@ -23,6 +23,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tusuarios`
+--
+
+CREATE TABLE IF NOT EXISTS `tusuarios` (
+  `id` int(11) NOT NULL,
+  `apellido` text NOT NULL,
+  `nombre` text NOT NULL,
+  `email` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `t_menu`
+--
+
+CREATE TABLE IF NOT EXISTS `t_menu` (
+  `nombre` text NOT NULL,
+  `apellido` text NOT NULL,
+  `email` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `t_perfiles`
 --
 
@@ -31,34 +56,6 @@ CREATE TABLE IF NOT EXISTS `t_perfiles` (
   `Nombre` text NOT NULL,
   `Descripcion` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `t_perfiles`
---
-
-INSERT INTO `t_perfiles` (`idPerfil`, `Nombre`, `Descripcion`) VALUES
-(1, 'Administrador', 'Admin');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `t_usuarios`
---
-
-CREATE TABLE IF NOT EXISTS `t_usuarios` (
-  `idUsuario` int(11) NOT NULL,
-  `apellido` text NOT NULL,
-  `nombre` text NOT NULL,
-  `email` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `t_usuarios`
---
-
-INSERT INTO `t_usuarios` (`idUsuario`, `apellido`, `nombre`, `email`) VALUES
-(7, 'Marucci', 'Maximo', 'Marucci.maximo@tel3.com.ar'),
-(8, 'Apellido2', 'Nombre2', 'corre2@email.com');
 
 -- --------------------------------------------------------
 
@@ -74,27 +71,20 @@ CREATE TABLE IF NOT EXISTS `t_usuarios_rel_perfiles` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `t_usuarios_rel_perfiles`
---
-
-INSERT INTO `t_usuarios_rel_perfiles` (`idRel`, `idUsuarios`, `idPerfiles`, `FechaHora`) VALUES
-(1, 7, 1, '2015-07-04');
-
---
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `tusuarios`
+--
+ALTER TABLE `tusuarios`
+  ADD PRIMARY KEY (`id`), ADD KEY `idUsuario` (`id`), ADD KEY `idUsuario_2` (`id`);
 
 --
 -- Indices de la tabla `t_perfiles`
 --
 ALTER TABLE `t_perfiles`
   ADD PRIMARY KEY (`idPerfil`), ADD KEY `idPerfil` (`idPerfil`);
-
---
--- Indices de la tabla `t_usuarios`
---
-ALTER TABLE `t_usuarios`
-  ADD PRIMARY KEY (`idUsuario`), ADD KEY `idUsuario` (`idUsuario`), ADD KEY `idUsuario_2` (`idUsuario`);
 
 --
 -- Indices de la tabla `t_usuarios_rel_perfiles`
@@ -107,15 +97,15 @@ ALTER TABLE `t_usuarios_rel_perfiles`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `tusuarios`
+--
+ALTER TABLE `tusuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+--
 -- AUTO_INCREMENT de la tabla `t_perfiles`
 --
 ALTER TABLE `t_perfiles`
   MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT de la tabla `t_usuarios`
---
-ALTER TABLE `t_usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `t_usuarios_rel_perfiles`
 --
@@ -129,7 +119,6 @@ ALTER TABLE `t_usuarios_rel_perfiles`
 -- Filtros para la tabla `t_usuarios_rel_perfiles`
 --
 ALTER TABLE `t_usuarios_rel_perfiles`
-ADD CONSTRAINT `t_usuarios_rel_perfiles_ibfk_1` FOREIGN KEY (`idUsuarios`) REFERENCES `t_usuarios` (`idUsuario`),
 ADD CONSTRAINT `t_usuarios_rel_perfiles_ibfk_2` FOREIGN KEY (`idPerfiles`) REFERENCES `t_perfiles` (`idPerfil`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,0 +1,26 @@
+<article class="col-md-12">
+	[article]
+	<br/>
+	<!-- Boton para agregar usuarios 
+	data-toggle="modal" data-target="#usuarios_crear"
+	-->
+	<button type="button" id="requestAdd" class="btn btn-sm btn-success"  data-step="2" data-intro="Agregar usuarios">
+		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	</button>
+	<br />
+	<br />
+	<!-- Armo la dynatable -->
+	<table id="users-table" class="table table-condensed table-bordered table-hover" data-step="3" data-intro="Prueba de una descripcion un poco mas larga para ver como se visualiza con este plugins <a href='www.google.com.ar'>Prueba Link</a> <br/> <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/120px-HTML5_logo_and_wordmark.svg.png'>">
+		<!-- Seteo los campos a mostrar -->	
+		<thead>
+			<th data-dynatable-column="id">Id</th>
+			<th data-dynatable-column="apellido">Apellido</th>
+			<th data-dynatable-column="nombre">Nombre</th>
+			<th data-dynatable-column="email">Email</th>
+			<th data-dynatable-column="actions">Acciones</th>
+		</thead>
+		<!-- Contenido con datos-->
+	  	<tbody>	  		
+	  	</tbody>
+	</table>
+</article>
